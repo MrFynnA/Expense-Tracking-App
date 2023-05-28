@@ -1,0 +1,67 @@
+.backdrop {
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.677);
+    width: 100%;
+    z-index: 10;
+    height: 100vh;
+}
+
+.modal {
+    top: 30vh;
+    width: 30rem;
+    background-color: aliceblue;
+    z-index: 100;
+    position: fixed;
+    overflow: hidden;
+    left: calc(53% - 20rem);
+    padding: 0;
+    padding-bottom: 2rem;
+}
+
+.modal header {
+    background-color: rgb(255, 64, 0);
+    width: 100%;
+}
+
+.modal h3 {
+    color: rgb(255, 255, 255);
+    padding: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.modal h4 {
+    font-weight: inherit;
+    color: rgb(40, 40, 40);
+    text-align: center;
+}
+
+.modal .action {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    padding-top: 2rem;
+    padding-right: 1rem;
+}
+
+.modal button {
+    background-color: rgb(255, 64, 0)!important;
+    outline: none;
+    border-style: none;
+    color: white;
+}
+
+.modal button:hover,
+.modal button:active {
+    background-color: rgb(225, 76, 26)!important;
+    cursor: pointer;
+}
+
+@media(max-width:600px) {
+    .modal {
+        width: 70%;
+        left: 8.5%;
+    }
+}
