@@ -26,7 +26,7 @@ return(
         <div className='expense-item__description'>
 <h2>{title}</h2>
 <div className='expense-item__price'>${amount}</div>
-<button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>-</span></button>
+<button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
         </div>
  
     </Card>
