@@ -10,6 +10,7 @@ const maxValue=Math.max(...chartValues)
 <div className={styles.chart}>
 {chartItems.map((items)=>
 <ChartBar 
+key={items.label}
 id={items.label}
 label={items.label} 
 value={items.value} 
