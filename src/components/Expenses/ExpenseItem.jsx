@@ -5,6 +5,8 @@ import Card from '../UI/Card.jsx';
 import ExpenseDate from './ExpenseDate.jsx';
 import {useDispatch,useSelector} from 'react-redux'
 import { uiAction } from '../expenseStore/expenseStore';
+import { CheckIcon } from '../UI/icons';
+import { CloseIcon } from '../UI/icons';
 
 
 
@@ -30,7 +32,7 @@ const ondisplayEdit=()=>{
 
 let expenseDisplay=<span className='expenseTitle'>{title}</span>
 if(displayState && expenseID===expenseId){
-    expenseDisplay=<span className='expense_inputUP'><input type='text'></input></span>
+    expenseDisplay=<span className='expense_inputUP'><input type='text'></input><span className='checkIC'><CheckIcon/><CloseIcon/></span></span>
 }
 
 
