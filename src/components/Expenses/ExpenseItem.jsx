@@ -62,7 +62,7 @@ return(
     
        <ExpenseDate expenseDate={date}/>
         <div className='expense-item__description'>
-<h2 onDoubleClick={ondisplayEdit}>{expenseDisplay}</h2>
+<h2 onClick={ondisplayEdit}>{expenseDisplay}</h2>
 <div className='expense-item__price'>${amount}</div>
 <button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
         </div>

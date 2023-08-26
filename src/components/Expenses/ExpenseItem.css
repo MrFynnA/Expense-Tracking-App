@@ -97,7 +97,7 @@
     }
     
     .expenseTitle:hover::after {
-        content: 'double click to edit';
+        content: 'Click to edit';
         position: absolute;
         font-size: 10px;
         width: 8rem;
