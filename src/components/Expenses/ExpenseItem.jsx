@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import './ExpenseItem.css';
 import './ExpenseDate.jsx';
 import Card from '../UI/Card.jsx';
@@ -12,8 +12,10 @@ import { expenseAction } from '../expenseStore/expenseStore';
 
 
 
+
 const ExpenseItem=(props)=>{
     const dispatch= useDispatch()
+    const[error,setError]=useState('')
     const displayState=useSelector(state=>state.uiState.uiChange)
     const expenseID=useSelector(state=>state.uiState.expenseItemId)
     const title=props.expenseTitle
@@ -28,22 +30,31 @@ const ExpenseItem=(props)=>{
         amount:amount,
         date:date
     }
-
+//deleting Expense Item
 const deleteHandle=()=>{
           props.expenseDel(expenseId)
 }
+//on editting expense Item Title
 const ondisplayEdit=()=>{
     console.log(expenseId)
     dispatch(uiAction.onexpenseEdit(expenseId))
 }
+//on close expense edit
 const onClose=()=>{
     dispatch(uiAction.oneexpenseCloseEdit())
     setNewTitle(title)
 }
+//on getting new expense item title
 const onGetNewTitle=(event)=>{
     setNewTitle(event.target.value)
+    setError('')
 }
+//setting new expense item title
 const onSetNewTitle=()=>{
+    if(newTitle.trim()===''){
+        setError('please enter title*')
+     return
+    }
 dispatch(expenseAction.onUpdateExpenseItem(newItem))
 dispatch(uiAction.oneexpenseCloseEdit())
 }
@@ -51,8 +62,16 @@ dispatch(uiAction.oneexpenseCloseEdit())
 
 let expenseDisplay=<span  onClick={ondisplayEdit} className='expenseTitle'>{title}</span>
 if(displayState && expenseID===expenseId){
-    expenseDisplay=<span className='expense_inputUP'><input onChange={onGetNewTitle} type='text' value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
+    expenseDisplay=<span className='expense_inputUP'><input onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
 }
+
+//not leaving field empty after click on new title for edit
+useEffect(()=>{
+    if(expenseID!==expenseId){
+        setNewTitle(title)
+        }
+},[expenseID])
+
 
 
 
