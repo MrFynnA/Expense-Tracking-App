@@ -49,7 +49,7 @@ dispatch(uiAction.oneexpenseCloseEdit())
 }
 
 
-let expenseDisplay=<span className='expenseTitle'>{title}</span>
+let expenseDisplay=<span  onClick={ondisplayEdit} className='expenseTitle'>{title}</span>
 if(displayState && expenseID===expenseId){
     expenseDisplay=<span className='expense_inputUP'><input onChange={onGetNewTitle} type='text' value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
 }
@@ -62,7 +62,7 @@ return(
     
        <ExpenseDate expenseDate={date}/>
         <div className='expense-item__description'>
-<h2 onClick={ondisplayEdit}>{expenseDisplay}</h2>
+<h2>{expenseDisplay}</h2>
 <div className='expense-item__price'>${amount}</div>
 <button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
         </div>
