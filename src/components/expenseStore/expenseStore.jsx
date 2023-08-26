@@ -9,11 +9,9 @@ const expenseSlice=createSlice({
     },
     reducers:{
         onGetUpdatedItems(state,action){
-            console.log(action.payload)
     state.expenseItems=action.payload
         },
         onUpdateExpenseItem(state,action){
-            console.log('dipatched')
        const existingItem=state.expenseItems.find(items=>items.id===action.payload.id)
        if(existingItem){
         existingItem.title=action.payload.title
