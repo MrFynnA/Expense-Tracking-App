@@ -8,9 +8,13 @@ const expenseSlice=createSlice({
         expenseItems:[],
     },
     reducers:{
-        onReceivedItems(state,action){
+        onGetUpdatedItems(state,action){
+            console.log(action.payload)
+    state.expenseItems=action.payload
+        },
+        onUpdateExpenseItem(state,action){
             console.log('dipatched')
-       const existingItem=state.expenseItems.find(items.id===action.payload.id)
+       const existingItem=state.expenseItems.find(items=>items.id===action.payload.id)
        if(existingItem){
         existingItem.title=action.payload.title
        }
@@ -38,7 +42,7 @@ const UISlice=createSlice({
 console.log(UISlice.reducer.uiChange)
 
 
-export const expenseAction=expenseSlice.actions.onReceivedItems
+export const expenseAction=expenseSlice.actions
 export const uiAction= UISlice.actions
 
 const store=configureStore({

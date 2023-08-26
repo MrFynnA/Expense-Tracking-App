@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './ExpenseItem.css';
 import './ExpenseDate.jsx';
 import Card from '../UI/Card.jsx';
@@ -7,6 +7,7 @@ import {useDispatch,useSelector} from 'react-redux'
 import { uiAction } from '../expenseStore/expenseStore';
 import { CheckIcon } from '../UI/icons';
 import { CloseIcon } from '../UI/icons';
+import { expenseAction } from '../expenseStore/expenseStore';
 
 
 
@@ -19,8 +20,14 @@ const ExpenseItem=(props)=>{
     const amount=props.expenseAmount
     const date=props.expenseDate
     const expenseId=props.expenseId
+    const[newTitle,setNewTitle]=useState(title)
 
-    console.log(expenseID)
+    const newItem={
+        id:expenseId,
+        title:newTitle,
+        amount:amount,
+        date:date
+    }
 
 const deleteHandle=()=>{
           props.expenseDel(expenseId)
@@ -29,10 +36,22 @@ const ondisplayEdit=()=>{
     console.log(expenseId)
     dispatch(uiAction.onexpenseEdit(expenseId))
 }
+const onClose=()=>{
+    dispatch(uiAction.oneexpenseCloseEdit())
+    setNewTitle(title)
+}
+const onGetNewTitle=(event)=>{
+    setNewTitle(event.target.value)
+}
+const onSetNewTitle=()=>{
+dispatch(expenseAction.onUpdateExpenseItem(newItem))
+dispatch(uiAction.oneexpenseCloseEdit())
+}
+
 
 let expenseDisplay=<span className='expenseTitle'>{title}</span>
 if(displayState && expenseID===expenseId){
-    expenseDisplay=<span className='expense_inputUP'><input type='text'></input><span className='checkIC'><CheckIcon/><CloseIcon/></span></span>
+    expenseDisplay=<span className='expense_inputUP'><input onChange={onGetNewTitle} type='text' value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
 }
 
 
