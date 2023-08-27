@@ -80,7 +80,7 @@
         align-items: center;
     }
     
-    .expense_inputUP input {
+    .expense_input_title input {
         border-radius: 5px;
         height: 2rem;
         border-style: none;
@@ -91,6 +91,30 @@
         font-size: 1rem;
         font-weight: 900;
         text-align: center;
+    }
+    
+    .expense_input_amount {
+        width: 50%;
+    }
+    
+    .expense-item__price.expense_amountContainer_shift {
+        position: relative!important;
+        left: 5rem !important;
+        width: 21%!important;
+    }
+    
+    .expense_input_amount input {
+        border-radius: 5px;
+        height: 2rem;
+        border-style: none;
+        outline-color: #cb5bff;
+        padding-left: 5px;
+        position: relative;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 1rem;
+        font-weight: 900;
+        text-align: center;
+        width: 90%;
     }
     
     .expenseTitle {

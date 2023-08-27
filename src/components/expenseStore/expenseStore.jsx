@@ -16,7 +16,13 @@ const expenseSlice=createSlice({
        if(existingItem){
         existingItem.title=action.payload.title
        }
-        }
+        },
+         onupdateExpenseAmount(state,action){
+            const existingItem=state.expenseItems.find(items=>items.id===action.payload.id)
+            if(existingItem){
+             existingItem.amount=action.payload.amount
+            }
+         }
     }
 })
 const UISlice=createSlice({
