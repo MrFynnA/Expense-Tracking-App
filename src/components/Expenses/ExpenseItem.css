@@ -117,29 +117,27 @@
         width: 90%;
     }
     
-    .expenseTitle {
+    .expenseTitleOrAmount {
         position: relative;
     }
     
-    .expenseTitle:hover::after {
+    .expenseTitleOrAmount:hover::after {
         content: 'Click to edit';
         position: absolute;
         font-size: 10px;
-        width: 8rem;
-        bottom: 2rem;
+        width: 5rem;
+        bottom: 2.5rem;
         background-color: rgb(29, 26, 25);
         color: white;
         border-radius: 5rem;
-        animation: fadeInRight 0.4s ease-in-out;
+        animation: fadeIn 0.4s;
     }
     
-    @keyframes fadeInRight {
+    @keyframes fadeIn {
         0% {
             opacity: 0;
-            transform: translateX(20px);
         }
         100% {
             opacity: 1;
-            transform: translateX(0);
         }
     }

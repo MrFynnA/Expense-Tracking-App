@@ -84,13 +84,13 @@ const ondisplayEditAmount=()=>{
     setInput('amount')
 }
 
-let expenseTitleDisplay=<span  onClick={ondisplayEditTitle} className='expenseTitle'>{title}</span>
-
-if(displayState && expenseID===expenseId && input==='title'){
+let expenseTitleDisplay=<span  onClick={ondisplayEditTitle} className='expenseTitleOrAmount'>{title}</span>
+const titleCondition=displayState && expenseID===expenseId && input==='title'
+if(titleCondition){
     expenseTitleDisplay=<span className='expense_input_title'><input onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
 }
 
-let expenseAmountDisplay=<span  onClick={ondisplayEditAmount} className='expenseAmount'>{`$${amount}`}</span>
+let expenseAmountDisplay=<span onClick={ondisplayEditAmount} className='expenseTitleOrAmount'>{`$${amount}`}</span>
 const amountCondition=displayState && expenseID===expenseId && input==='amount'
 if(amountCondition){
     expenseAmountDisplay=<span className='expense_input_amount'><input onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input></span>

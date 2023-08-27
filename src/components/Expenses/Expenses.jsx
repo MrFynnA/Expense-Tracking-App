@@ -6,13 +6,11 @@ import ExpenseFilter from './ExpenseFilter';
 import './ExpenseFilter.css';
 import ExpenseList from './ExpenseList';
 import ExpensesChart from './ExpensesChart';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { expenseAction } from '../expenseStore/expenseStore';
 
 
 const Expenses=props=>{
- 
-  const dispatch=useDispatch()
      const expenseItems=props.expenses
 
      const[year, setYear]=useState('2023')
@@ -20,6 +18,7 @@ const Expenses=props=>{
      const getYear=(receivedYear)=>{
        setYear(receivedYear)
     }
+ 
    const filteredExpenses= expenseItems.filter((expenses)=>year===expenses.date.getFullYear().toString())
    const totalExpense=filteredExpenses.reduce((a,items)=>a+items.amount,0)
   
