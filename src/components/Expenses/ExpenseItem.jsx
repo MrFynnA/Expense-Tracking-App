@@ -68,7 +68,7 @@ const onGetNewAmount=(event)=>{
     setError('')
 }
 const onSetNewAmount=()=>{
-    if(newAmount.trim()===''){
+    if(newAmount.trim()===' '){
         setError('enter amount*')
      return
     }
