@@ -26,7 +26,6 @@ const ExpenseItem=(props)=>{
     const[newAmount,setNewAmount]=useState(amount)
     const[input,setInput]=useState(null)
 
-    console.log(amount)
 
     const newItem={
         id:expenseId,
@@ -40,7 +39,7 @@ const deleteHandle=()=>{
 }
 //on editting expense Item Title
 const ondisplayEditTitle=()=>{
-    console.log(expenseId)
+
     dispatch(uiAction.onexpenseEdit(expenseId))
     setInput('title')
 }
@@ -79,7 +78,7 @@ dispatch(expenseAction.onupdateExpenseAmount(newItem))
 dispatch(uiAction.oneexpenseCloseEdit())
 }
 const ondisplayEditAmount=()=>{
-    console.log(expenseId)
+
     dispatch(uiAction.onexpenseEdit(expenseId))
     setInput('amount')
 }

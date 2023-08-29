@@ -33,7 +33,6 @@ const UISlice=createSlice({
     },
     reducers:{
          onexpenseEdit(state,action){
-            console.log(action.payload)
        state.uiChange=true
        state.expenseItemId=action.payload
          },
@@ -43,7 +42,6 @@ const UISlice=createSlice({
          }
     }
 })
-console.log(UISlice.reducer.uiChange)
 
 
 export const expenseAction=expenseSlice.actions

@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import React from 'react';
 import Expenses from './components/Expenses/Expenses.jsx';
 import './App.css';
 import NewExpense from './components/NewExpense/NewExpense.jsx';
 import './components/Expenses/Expenses.css'
+import {useDispatch} from 'react-redux'
+import { expenseAction } from './components/expenseStore/expenseStore.jsx';
 
 
 
@@ -87,6 +89,8 @@ const expenseItemsDummy=[
 
 const App = ()=> { 
  const[data,setData]=useState(expenseItemsDummy)
+ const dispatch=useDispatch()
+ 
 
     const receivedDataFromNewExpense=(incomeExpenseData)=>{
 //  console.log(dataa)
@@ -100,6 +104,9 @@ const App = ()=> {
 })
 
     }
+    useEffect(()=>{
+        dispatch(expenseAction.onGetUpdatedItems(data))
+    },[data])
 
     const deleteExpenseHandler=(expenseId)=>{
         setData((previous)=>{
@@ -116,7 +123,7 @@ const App = ()=> {
         <div>
             
     <NewExpense onReceiveData={receivedDataFromNewExpense}/>
-<Expenses expenses={data} deleteExpense={deleteExpenseHandler}/>
+<Expenses deleteExpense={deleteExpenseHandler}/>
 </div>
 </>
     )

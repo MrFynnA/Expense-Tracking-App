@@ -11,7 +11,7 @@ import { expenseAction } from '../expenseStore/expenseStore';
 
 
 const Expenses=props=>{
-     const expenseItems=props.expenses
+     const expenseData=useSelector(state=>state.expenseState.expenseItems)
 
      const[year, setYear]=useState('2023')
    
@@ -19,8 +19,8 @@ const Expenses=props=>{
        setYear(receivedYear)
     }
  
-   const filteredExpenses= expenseItems.filter((expenses)=>year===expenses.date.getFullYear().toString())
-   const totalExpense=filteredExpenses.reduce((a,items)=>a+items.amount,0)
+   const filteredExpenses= expenseData.filter((expenses)=>year===expenses.date.getFullYear().toString())
+   const totalExpense=filteredExpenses.reduce((a,items)=>a+ +items.amount,0)
   
 
   

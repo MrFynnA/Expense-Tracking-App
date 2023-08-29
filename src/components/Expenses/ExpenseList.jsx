@@ -8,8 +8,6 @@ import {useSelector,useDispatch} from 'react-redux'
 
 const ExpenseList=(props)=>{
     
-    const dispatch=useDispatch()
-    const expenseItemsFrmStore=useSelector(state=>state.expenseState.expenseItems)
     let display=<h3 className="expenses-list__fallback">No Expenses Found</h3>
     // const expenseItems=props.filteredExpense.map(items=>{
     //     return{
@@ -18,11 +16,6 @@ const ExpenseList=(props)=>{
     //         amount:items.amount
     //     }
     // })
-    useEffect(()=>{
-        dispatch(expenseAction.onGetUpdatedItems(props.filteredExpense))
-
-    },[props.filteredExpense])
-
 
 // const newExpenseUpdate=expenseItemsFrmStore.map(items=>{
 //     return{
@@ -36,8 +29,8 @@ const ExpenseList=(props)=>{
 
     // console.log(expenseItemsFrmStore)
 
-if (expenseItemsFrmStore.length > 0){
-      display=expenseItemsFrmStore.map((expenses)=><ExpenseItem
+if (props.filteredExpense.length > 0){
+      display=props.filteredExpense.map((expenses)=><ExpenseItem
       key={expenses.id}
       expenseId={expenses.id}
       expenseTitle={expenses.title}
