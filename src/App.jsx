@@ -57,7 +57,7 @@ const expenseItemsDummy=[
     },    {
         id:'e8',
         title:'Home in Florida',
-        amount:355000,
+        amount:35000,
         date:new Date(2020,1,3)
 
     },    {
