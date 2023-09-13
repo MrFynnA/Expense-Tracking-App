@@ -5,7 +5,8 @@
         padding: 0.5rem;
         margin: 1rem 0;
         background-color: #4b4b4b;
-        gap: 5rem
+        gap: 5rem;
+        user-select: none;
     }
     
     .expense-item__description {
@@ -24,6 +25,7 @@
         flex: 1;
         margin: 0 1rem;
         color: white;
+        cursor: pointer;
     }
     
     .expense-item__price {
@@ -34,6 +36,7 @@
         border: 1px solid white;
         padding: 0.5rem;
         border-radius: 12px;
+        cursor: pointer;
     }
     
     .expense-item__description button {
