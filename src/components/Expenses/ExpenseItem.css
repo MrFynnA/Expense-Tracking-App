@@ -12,7 +12,7 @@
     .expense-item__description {
         display: flex;
         flex-direction: column;
-        gap: 5rem;
+        gap: 2rem;
         align-items: flex-end;
         flex-flow: column-reverse;
         justify-content: flex-start;

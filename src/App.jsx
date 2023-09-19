@@ -88,7 +88,7 @@ const expenseItemsDummy=[
 ]
 
 const App = ()=> { 
- const[data,setData]=useState(expenseItemsDummy)
+ const[data,setData]=useState([])
  const dispatch=useDispatch()
  
 

@@ -116,7 +116,7 @@ return(
     
        <ExpenseDate expenseDate={date}/>
         <div className='expense-item__description'>
-<h2>{expenseTitleDisplay}</h2>
+<h2 style={{width:"9rem"}}>{expenseTitleDisplay}</h2>
 <div className={`${'expense-item__price'} ${amountCondition &&'expense_amountContainer_shift'}`}>{expenseAmountDisplay}</div>{amountCondition && <span className='checkIC'><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
 <button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
         </div>
