@@ -4,8 +4,9 @@
     font-weight: bold;
 }
 
-.expenseBox {
+
+/* .expenseBox {
     display: flex;
-    justify-content: column;
+    justify-content: center;
     align-items: center;
-}
+} */
