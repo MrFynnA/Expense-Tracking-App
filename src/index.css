@@ -31,7 +31,9 @@ body {
     width: 100% !important;
     min-height: 100vh;
     background-color: #0d0d0d;
-    /* overflow-x: hidden !important;            */
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden !important;
 }
 
 h1 {
