@@ -26,4 +26,7 @@
         max-width: 80%!important;
         flex-direction: column;
     }
+    .totalExpense h1 {
+        font-size: 20px;
+    }
 }
