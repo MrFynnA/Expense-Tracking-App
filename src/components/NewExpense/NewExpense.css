@@ -8,6 +8,11 @@
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    overflow-x: hidden;
+}
+
+form {
+    overflow-x: hidden;
 }
 
 .new-expense button {
@@ -40,4 +45,10 @@
 .new-expense button.alternative:hover,
 .new-expense button.alternative:active {
     background-color: #ddb3f8;
+}
+
+@media(max-width:600px) {
+    .new-expense {
+        max-width: 85%;
+    }
 }

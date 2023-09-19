@@ -1,146 +1,248 @@
-    .expense-item {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0.5rem;
-        margin: 1rem 0;
-        background-color: #4b4b4b;
-        gap: 5rem;
-        user-select: none;
-    }
-    
-    .expense-item__description {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        align-items: flex-end;
-        flex-flow: column-reverse;
-        justify-content: flex-start;
-        flex: 1;
-    }
-    
-    .expense-item h2 {
-        color: #3a3a3a;
-        font-size: 1rem;
-        flex: 1;
-        margin: 0 1rem;
-        color: white;
-        cursor: pointer;
-    }
-    
-    .expense-item__price {
-        font-size: 1rem;
-        font-weight: bold;
-        color: white;
-        background-color: #40005d;
-        border: 1px solid white;
-        padding: 0.5rem;
-        border-radius: 12px;
-        cursor: pointer;
-    }
-    
-    .expense-item__description button {
-        padding: 2px 10px!important;
-        border-radius: 20px;
-        outline: none!important;
-        border-style: none;
-        position: relative;
-    }
-    
-    .expense-item__description button:hover::after {
-        content: 'delete';
-        position: absolute;
-        bottom: 1.9rem;
-        background-color: aliceblue;
-        font-size: 13px;
-        padding: 2px 4px;
-        border-radius: 5px;
-    }
-    
-    @media(min-width: 580px) {
-        .expense-item__description {
-            flex-direction: row;
+        .expense-item {
+            display: flex;
+            justify-content: space-around;
             align-items: center;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            background-color: #4b4b4b;
+            gap: 5rem;
+            user-select: none;
+        }
+        
+        @media(max-width:600px) {
+            .expense-item {
+                /* gap: 1rem; */
+                padding: 0rem;
+                width: 90%!important;
+                justify-content: none !important;
+            }
+            .expense-item h2 {
+                color: #3a3a3a;
+                font-size: 1rem;
+                color: white;
+                cursor: pointer;
+                margin: 0 0rem !important;
+                position: relative;
+                right: 2rem;
+            }
+            .expense_input_title input {
+                height: 1.5rem!important;
+                font-size: 1rem;
+                font-weight: 900;
+                width: 7rem;
+            }
+            .expense-item__description {
+                justify-content: center!important;
+                align-items: center!important;
+            }
+            .checkICA {
+                display: flex;
+                align-items: center;
+                position: relative;
+                top: 2rem;
+                left: -1rem!important;
+                /* justify-content: center; */
+            }
+            .checkIC {
+                top: 0.3rem;
+            }
+            .expense-item__description button {
+                display: none;
+            }
+            .expense_input_amount {
+                width: 100% !important;
+            }
+            .expense-item__price {
+                position: relative;
+                border-style: none!important;
+                background-color: transparent!important;
+                /* right: 10rem!important; */
+            }
+            .expense_input_amount input {
+                height: 2rem;
+                font-size: 1rem;
+                font-weight: 900;
+                width: 5rem!important;
+                right: 2rem;
+            }
+            .expense-item__price.expense_amountContainer_shift {
+                position: relative!important;
+                left: 0rem !important;
+                width: 0%!important;
+            }
+            .amount_A {
+                background-color: #40005d;
+                border: 1px solid white;
+                padding: 0.5rem;
+                border-radius: 12px;
+            }
+            .checkICA {
+                position: relative;
+                left: 0.1rem;
+                top: 2rem!important;
+            }
+        }
+        
+        .amount_A {
+            background-color: transparent;
+            border: none;
+            padding: none;
+            border-radius: none;
+        }
+        
+        .titleEdit {
+            text-align: center!important;
+            position: relative;
+            position: relative;
+            right: 2rem;
+            /* top: 1rem; */
+        }
+        
+        .expense-item__description {
+            display: flex;
+            flex-direction: row !important;
+            gap: 0rem !important;
+            align-items: flex-end;
+            flex-flow: column-reverse;
             justify-content: flex-start;
             flex: 1;
         }
-        .expense-item__description h2 {
-            font-size: 1.25rem;
+        
+        .expense-item h2 {
+            color: #3a3a3a;
+            font-size: 1rem;
+            flex: 1;
+            margin: 0 1rem;
+            color: white;
+            cursor: pointer;
         }
+        
         .expense-item__price {
-            font-size: 1.25rem;
-            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background-color: #40005d;
+            border: 1px solid white;
+            padding: 0.5rem;
+            border-radius: 12px;
+            cursor: pointer;
         }
-    }
-    
-    .checkIC {
-        position: relative;
-        left: 1rem;
-    }
-    
-    .expense_inputUP {
-        display: flex;
-        align-items: center;
-    }
-    
-    .expense_input_title input {
-        border-radius: 5px;
-        height: 2rem;
-        border-style: none;
-        outline-color: #cb5bff;
-        padding-left: 5px;
-        position: relative;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 1rem;
-        font-weight: 900;
-        text-align: center;
-    }
-    
-    .expense_input_amount {
-        width: 50%;
-    }
-    
-    .expense-item__price.expense_amountContainer_shift {
-        position: relative!important;
-        left: 5rem !important;
-        width: 21%!important;
-    }
-    
-    .expense_input_amount input {
-        border-radius: 5px;
-        height: 2rem;
-        border-style: none;
-        outline-color: #cb5bff;
-        padding-left: 5px;
-        position: relative;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size: 1rem;
-        font-weight: 900;
-        text-align: center;
-        width: 90%;
-    }
-    
-    .expenseTitleOrAmount {
-        position: relative;
-    }
-    
-    .expenseTitleOrAmount:hover::after {
-        content: 'Click to edit';
-        position: absolute;
-        font-size: 10px;
-        width: 5rem;
-        bottom: 2.5rem;
-        background-color: rgb(29, 26, 25);
-        color: white;
-        border-radius: 5rem;
-        animation: fadeIn 0.4s;
-    }
-    
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
+        
+        .expense-item__description button {
+            padding: 2px 10px!important;
+            border-radius: 20px;
+            outline: none!important;
+            border-style: none;
+            position: relative;
         }
-        100% {
-            opacity: 1;
+        
+        .expense-item__description button:hover::after {
+            content: 'delete';
+            position: absolute;
+            bottom: 1.9rem;
+            background-color: aliceblue;
+            font-size: 13px;
+            padding: 2px 4px;
+            border-radius: 5px;
         }
-    }
+        
+        @media(min-width: 580px) {
+            .expense-item__description {
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                flex: 1;
+                gap: 2rem!important;
+            }
+            .expense-item__description h2 {
+                font-size: 1.25rem;
+            }
+            .expense-item__price {
+                font-size: 1.25rem;
+                padding: 0.5rem 1.5rem;
+            }
+        }
+        
+        .checkIC {
+            position: relative;
+            left: 1rem;
+        }
+        
+        .checkICA {
+            position: relative;
+            left: 0.1rem;
+            top: 3rem;
+        }
+        
+        .expense_inputUP {
+            display: flex;
+            align-items: center;
+        }
+        
+        .expense_input_title input {
+            border-radius: 5px;
+            height: 2rem;
+            border-style: none;
+            outline-color: #cb5bff;
+            padding-left: 5px;
+            position: relative;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            text-align: center;
+        }
+        
+        .expense_input_amount {
+            width: 50%;
+        }
+        
+        .expense-item__price.expense_amountContainer_shift {
+            position: relative;
+            left: 5rem;
+            width: 21%;
+        }
+        
+        .expense_input_amount input {
+            border-radius: 5px;
+            height: 2rem;
+            border-style: none;
+            outline-color: #cb5bff;
+            padding-left: 5px;
+            position: relative;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            text-align: center;
+            width: 90%;
+        }
+        
+        .expenseTitleOrAmount {
+            position: relative;
+        }
+        
+        .expenseTitleOrAmount:hover::after {
+            content: 'Click to edit';
+            position: absolute;
+            font-size: 10px;
+            width: 5rem;
+            bottom: 2.5rem;
+            background-color: rgb(29, 26, 25);
+            color: white;
+            border-radius: 5rem;
+            animation: fadeIn 0.4s;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @media(max-width:600px) {
+            .expense-item {
+                width: 12rem;
+            }
+        }

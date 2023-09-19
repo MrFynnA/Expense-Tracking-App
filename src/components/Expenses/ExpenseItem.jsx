@@ -83,16 +83,17 @@ const ondisplayEditAmount=()=>{
     setInput('amount')
 }
 
-let expenseTitleDisplay=<span  onClick={ondisplayEditTitle} className='expenseTitleOrAmount'>{title}</span>
+let expenseTitleDisplay=<h2  onClick={ondisplayEditTitle} className='expenseTitleOrAmount'>{title}</h2>
 const titleCondition=displayState && expenseID===expenseId && input==='title'
 if(titleCondition){
-    expenseTitleDisplay=<span className='expense_input_title'><input onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
+    expenseTitleDisplay=<p className='titleEdit'><span className='expense_input_title'><input onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span></p>
 }
 
-let expenseAmountDisplay=<span onClick={ondisplayEditAmount} className='expenseTitleOrAmount'>{`$${amount}`}</span>
+let expenseAmountDisplay=<span onClick={ondisplayEditAmount} className={`${'expenseTitleOrAmount'} ${'amount_A'}`}>{`$${amount}`}</span>
 const amountCondition=displayState && expenseID===expenseId && input==='amount'
 if(amountCondition){
-    expenseAmountDisplay=<span className='expense_input_amount'><input onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input></span>
+    expenseAmountDisplay=<span className='expense_input_amount'><input onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input>
+    </span>
 }
 
 //not leaving field empty after click on new title for edit
@@ -116,8 +117,9 @@ return(
     
        <ExpenseDate expenseDate={date}/>
         <div className='expense-item__description'>
-<h2 style={{width:"9rem"}}>{expenseTitleDisplay}</h2>
-<div className={`${'expense-item__price'} ${amountCondition &&'expense_amountContainer_shift'}`}>{expenseAmountDisplay}</div>{amountCondition && <span className='checkIC'><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
+{expenseTitleDisplay}
+<div className={`${'expense-item__price'} ${amountCondition &&'expense_amountContainer_shift'}`}>{expenseAmountDisplay}</div>
+{amountCondition && <span className='checkICA'><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
 <button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
         </div>
  

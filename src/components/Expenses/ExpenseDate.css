@@ -24,3 +24,21 @@
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+@media(max-width:600px) {
+    .expense-date {
+        width: 4rem;
+        height: 4rem;
+    }
+    .expense-date__month {
+        font-size: 0.60rem;
+        font-weight: bold;
+    }
+    .expense-date__year {
+        font-size: 0.75rem;
+    }
+    .expense-date__day {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}

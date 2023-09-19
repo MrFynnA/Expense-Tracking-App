@@ -20,3 +20,9 @@
     font-size: 30px;
     font-weight: 900
 }
+
+@media(max-width:600px) {
+    .expenses-contain {
+        max-width: 80%!important;
+    }
+}

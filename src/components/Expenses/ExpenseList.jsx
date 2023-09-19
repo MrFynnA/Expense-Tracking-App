@@ -42,7 +42,7 @@ if (props.filteredExpense.length > 0){
 
 
 return(
-    <div>
+    <div className='expenseBox'>
     {display}
     </div>
 )
