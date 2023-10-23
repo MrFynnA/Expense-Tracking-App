@@ -119,11 +119,11 @@ const App = ()=> {
 
     return(
         <>
-    
+    <div className='text-center text-2xl text-white font-bold'>under maintenance</div>
         <div className='md:w-[50rem] flex flex-col gap-5'>
-            
+{/*             
     <NewExpense onReceiveData={receivedDataFromNewExpense}/>
-<Expenses deleteExpense={deleteExpenseHandler}/>
+<Expenses deleteExpense={deleteExpenseHandler}/> */}
 </div>
 </>
     )
