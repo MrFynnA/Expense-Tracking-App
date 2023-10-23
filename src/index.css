@@ -29,9 +29,9 @@ a:hover {
 body {
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     place-items: center;
-    width: 100%;
+    width: 100% !important;
     min-height: 100vh;
     background-color: #0d0d0d;
     /* justify-content: center;
@@ -90,14 +90,4 @@ button:focus-visible {
     display: inline;
     padding-left: 30px;
     margin-bottom: 500px;
-}
-
-.tp {
-    padding-left: 60px;
-}
-
-@media(max-width:600px) {
-    body {
-        /* width: 54.3vh !important; */
-    }
 }

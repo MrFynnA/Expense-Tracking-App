@@ -16,7 +16,7 @@ const NewExpense=(props)=>{
      props.onReceiveData(newData)
     }
 
-    return <div className='new-expense'>
+    return <div className={`new-expense w-full bg-[#2f2061] p-10 rounded-md`}>
 <ExpenseForm onSaveDataHandler={onSaveData}/>
     </div>
 }

@@ -25,7 +25,7 @@ const Expenses=props=>{
 
   
      return(
-        <Card className='expenses-contain'>
+        <Card className='bg-[goldenrod]'>
         <ExpenseFilter valueOfYear={year} onSelectedYear={getYear}/>
         <ExpensesChart expenses={filteredExpenses} />
     <ExpenseList filteredExpense={filteredExpenses} expenseDelete={props.deleteExpense} />

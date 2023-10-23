@@ -142,24 +142,26 @@ dateEntered: event.target.value
   
 
     return (
-        <div>
+        <div className='!w-full'>
         {Error && (<ErrorModal title={Error.title} message={Error.message} onConfirm={onConfirmError} text='Okay'/>)}
 <form onSubmit={submitHandler}>
 {userData && <div>
-    <div className='new-expense__controls'>
-        <div className='new-expense__control'>
+    <div className={`new-expense__controls !w-full`}>
+        <div className='w-full flex gap-2'>
+        <div className='new-expense__control w-[50%]'>
             <label style={{color:'white'}}>Title</label>
-            <input onChange={titleHandler} type="text" value={userInput.titleEntered}/>
+            <input onChange={titleHandler} className='w-full' type="text" value={userInput.titleEntered}/>
             {/* <p  style={{color:'red'}}>{titleMessage}</p> */}
         </div>
-        <div className='new-expense__control'>
+        <div className='new-expense__control w-[50%]'>
             <label style={{color:'white'}}>Amount</label>
-            <input onChange={amountHandler} type="number" min="0.01" step='0.01' value={userInput.amountEntered} />
+            <input onChange={amountHandler} type="number" className='w-full' min="0.01" step='0.01' value={userInput.amountEntered} />
             {/* <p  style={{color:'red'}}>{amountMessage}</p> */}
         </div>
-        <div  className='new-expense__control'>
+        </div>
+        <div  className='new-expense__control w-[50%]'>
             <label style={{color:'white'}}>Date</label>
-            <input onChange={dateHandler} type="date" min="2019-01-01" max="2023-12-01" value={userInput.dateEntered} />
+            <input onChange={dateHandler} type="date" className='w-full' min="2019-01-01" max="2023-12-01" value={userInput.dateEntered} />
             {/* <p  style={{color:'red'}}>{dateMessage}</p> */}
         </div>
     </div>
@@ -172,7 +174,7 @@ dateEntered: event.target.value
     </button>
     </div>
 </div>}
-{!userData && <div><button onClick={dataRender}>ADD New Expense</button></div>}
+{!userData && <div className='w-full'><button onClick={dataRender}>ADD New Expense</button></div>}
     
 
 

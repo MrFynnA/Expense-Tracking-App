@@ -83,16 +83,16 @@ const ondisplayEditAmount=()=>{
     setInput('amount')
 }
 
-let expenseTitleDisplay=<h2  onClick={ondisplayEditTitle} className='expenseTitleOrAmount'>{title}</h2>
+let expenseTitleDisplay=<h2  onClick={ondisplayEditTitle} className='expenseTitleOrAmount font-extrabold text-white'>{title}</h2>
 const titleCondition=displayState && expenseID===expenseId && input==='title'
 if(titleCondition){
     expenseTitleDisplay=<p className='titleEdit'><span className='expense_input_title'><input onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span></p>
 }
 
-let expenseAmountDisplay=<span onClick={ondisplayEditAmount} className={`${'expenseTitleOrAmount'} ${'amount_A'}`}>{`$${amount}`}</span>
+let expenseAmountDisplay=<span onClick={ondisplayEditAmount} className={`${'w-full bg-indigo-800 p-3 border-2 border-white rounded-lg'} ${'amount_A'}`}>{`$${amount}`}</span>
 const amountCondition=displayState && expenseID===expenseId && input==='amount'
 if(amountCondition){
-    expenseAmountDisplay=<span className='expense_input_amount'><input onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input>
+    expenseAmountDisplay=<span className='expense_input_amount text-black'><input onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input>
     </span>
 }
 
@@ -113,16 +113,14 @@ useEffect(()=>{
 
 return(
 <>
-    <Card className='expense-item'>
+    <Card className='flex w-full justify-between items-center bg-[#4b4b4b] my-5'>
     
        <ExpenseDate expenseDate={date}/>
-        <div className='expense-item__description'>
 {expenseTitleDisplay}
-<div className={`${'expense-item__price'} ${amountCondition &&'expense_amountContainer_shift'}`}>{expenseAmountDisplay}</div>
+<div className={`${'font-extrabold text-white w-[5rem]'}`}>{expenseAmountDisplay}</div>
 {amountCondition && <span className='checkICA'><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
 <button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
-        </div>
- 
+    
     </Card>
     </>
 )

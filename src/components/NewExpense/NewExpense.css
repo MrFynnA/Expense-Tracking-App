@@ -1,15 +1,13 @@
-.new-expense {
+/* .new-expense {
     background-color: #2f2061;
     padding: 1rem;
     margin: 2rem auto;
-    /* flex-wrap: wrap; */
-    /* width: 50rem; */
     max-width: 95%;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
     overflow-x: hidden;
-}
+} */
 
 form {
     overflow-x: hidden;
@@ -47,8 +45,10 @@ form {
     background-color: #ddb3f8;
 }
 
+
+/* 
 @media(max-width:600px) {
     .new-expense {
         max-width: 85%;
     }
-}
+} */

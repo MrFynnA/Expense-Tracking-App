@@ -120,7 +120,7 @@ const App = ()=> {
     return(
         <>
     
-        <div>
+        <div className='md:w-[50rem] flex flex-col gap-5'>
             
     <NewExpense onReceiveData={receivedDataFromNewExpense}/>
 <Expenses deleteExpense={deleteExpenseHandler}/>

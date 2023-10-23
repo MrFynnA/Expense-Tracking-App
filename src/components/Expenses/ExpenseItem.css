@@ -1,4 +1,4 @@
-        .expense-item {
+        /* .expense-item {
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -11,7 +11,6 @@
         
         @media(max-width:600px) {
             .expense-item {
-                /* gap: 1rem; */
                 padding: 0rem;
                 width: 90%!important;
                 justify-content: none !important;
@@ -43,7 +42,6 @@
                 position: relative;
                 top: 2rem;
                 left: -1rem!important;
-                /* justify-content: center; */
             }
             .checkIC {
                 top: 0.3rem;
@@ -58,7 +56,6 @@
                 position: relative;
                 border-style: none!important;
                 background-color: transparent!important;
-                /* right: 10rem!important; */
             }
             .expense_input_amount input {
                 height: 2rem;
@@ -97,7 +94,6 @@
             position: relative;
             position: relative;
             right: 2rem;
-            /* top: 1rem; */
         }
         
         .expense-item__description {
@@ -247,4 +243,4 @@
             .expense-item {
                 width: 12rem;
             }
-        }
+        } */
