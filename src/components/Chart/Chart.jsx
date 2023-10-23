@@ -7,7 +7,7 @@ const chartItems=props.chartItems
 const chartValues=chartItems.map(chartValue=>chartValue.value)
 const maxValue=Math.max(...chartValues)
     return(
-<div className={`${styles.chart} max-md:gap-1`}>
+<div className={`${styles.chart} max-md:gap-1 w-full`}>
 {chartItems.map((items)=>
 <ChartBar 
 key={items.label}
