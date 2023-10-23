@@ -118,7 +118,7 @@ return(
        <ExpenseDate expenseDate={date}/>
 {expenseTitleDisplay}
        </div>
-<div className='flex items-center gap-16 mt-5'>
+<div className='flex items-center gap-20 mt-5'>
 
 <div className={`${'font-extrabold text-white w-[5rem]'}`}>{expenseAmountDisplay}</div>
 {amountCondition && <span className='checkICA'><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}

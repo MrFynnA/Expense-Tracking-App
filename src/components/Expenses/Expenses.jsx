@@ -31,7 +31,7 @@ const Expenses=props=>{
     <ExpenseList filteredExpense={filteredExpenses} expenseDelete={props.deleteExpense} />
     <div className='totalExpense'>
 
-<div className='font-extrabold !text-lg flex gap-2 justify-center mt-[1rem]'>
+<div className='font-extrabold !text-lg flex gap-2 justify-center mt-[1rem] max-md:flex-col'>
     <div className='font-mono'>Total Expenses:</div>
     <div>${totalExpense.toLocaleString()}</div>
 </div>
