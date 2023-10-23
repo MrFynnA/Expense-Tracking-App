@@ -120,8 +120,8 @@ const App = ()=> {
     return(
         <>
     {/* <div className='text-center text-2xl text-white font-bold'>under maintenance</div> */}
-    <div className='flex justify-center'>
-
+    <div className='flex justify-center flex-col items-center'>
+           <div className='pb-[2rem] text-white font-bold text-2xl max-md:text-xl font-mono'>Manage Your Expenses</div>
         <div className='md:w-[50rem] max-lg:!w-[40rem] flex flex-col gap-5 max-md:!w-[88%]'>
             
     <NewExpense onReceiveData={receivedDataFromNewExpense}/>
