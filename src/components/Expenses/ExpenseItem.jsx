@@ -113,13 +113,17 @@ useEffect(()=>{
 
 return(
 <>
-    <Card className='flex w-full justify-between items-center bg-[#4b4b4b] my-5'>
-    
+    <Card className='flex w-full justify-between items-center bg-[#4b4b4b] max-md:pt-0 my-5 max-md:flex-col max-md:gap-4'>
+       <div className='flex items-center max-md:flex-col gap-40 max-md:gap-8 w-full'>
        <ExpenseDate expenseDate={date}/>
 {expenseTitleDisplay}
+       </div>
+<div className='flex items-center gap-16 mt-5'>
+
 <div className={`${'font-extrabold text-white w-[5rem]'}`}>{expenseAmountDisplay}</div>
 {amountCondition && <span className='checkICA'><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
 <button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
+</div>
     
     </Card>
     </>

@@ -119,12 +119,15 @@ const App = ()=> {
 
     return(
         <>
-    <div className='text-center text-2xl text-white font-bold'>under maintenance</div>
-        <div className='md:w-[50rem] flex flex-col gap-5'>
-{/*             
+    {/* <div className='text-center text-2xl text-white font-bold'>under maintenance</div> */}
+    <div className='flex justify-center'>
+
+        <div className='md:w-[50rem] max-lg:!w-[40rem] flex flex-col gap-5 max-md:!w-[88%]'>
+            
     <NewExpense onReceiveData={receivedDataFromNewExpense}/>
-<Expenses deleteExpense={deleteExpenseHandler}/> */}
+<Expenses deleteExpense={deleteExpenseHandler}/>
 </div>
+    </div>
 </>
     )
 

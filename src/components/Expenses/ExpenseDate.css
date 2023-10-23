@@ -27,7 +27,7 @@
 
 @media(max-width:600px) {
     .expense-date {
-        width: 4rem;
+        /* width: 4rem; */
         height: 4rem;
     }
     .expense-date__month {
