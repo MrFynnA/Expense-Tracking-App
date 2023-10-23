@@ -10,12 +10,12 @@ const ExpenseFilter=(props)=>{
        const yearValue=props.valueOfYear
 
     return(
-<div className='expenses-filter__control'>
-               <div className='expenses-filter'>
+<div className='flex justify-between'>
+               <div className='text-lg max-md:text-md font-extrabold'>
                     <label>Select Year</label>
                </div>
-               <div className='expenses-filter'>
-    <select value={yearValue} onChange={onGetYear} ref={years}>
+               <div className='cursor-pointer'>
+    <select className='px-4 py-1 mb-2 !cursor-pointer outline-none rounded-md font-mono' value={yearValue} onChange={onGetYear} ref={years}>
 <option>2019</option>
 <option>2020</option>
 <option>2021</option>
