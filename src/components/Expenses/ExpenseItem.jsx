@@ -123,9 +123,9 @@ return(
        </div>
        </div>
 <div className='flex items-center gap-20 mt-5 relative md:bottom-2'>
-<div className='flex items-center gap-2'>
+<div className='flex max-md:flex-col items-center gap-2'>
 <div className='font-extrabold text-white'>{expenseAmountDisplay}</div>
-{amountCondition && <span><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
+{amountCondition && <span className='max-md:flex'><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
 </div>
 <button className='after:content-["delete"] after:hidden after:text-[0.7rem] after:bg-black after:px-2 after:rounded-lg hover:after:block after:text-white max-lg:after:!hidden after:font-[400] after:absolute after:bottom-20'  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
 </div>
