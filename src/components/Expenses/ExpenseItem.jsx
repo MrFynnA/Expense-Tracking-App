@@ -83,16 +83,16 @@ const ondisplayEditAmount=()=>{
     setInput('amount')
 }
 
-let expenseTitleDisplay=<h2  onClick={ondisplayEditTitle} className='expenseTitleOrAmount font-extrabold text-white'>{title}</h2>
+let expenseTitleDisplay=<h2  onClick={ondisplayEditTitle} className='expenseTitleOrAmount font-extrabold text-white after:content-["click_to_edit_Title"] after:hidden after:text-[0.7rem] after:bg-black after:px-2 after:rounded-lg hover:after:block max-lg:after:!hidden after:font-[400] after:absolute after:bottom-20'>{title}</h2>
 const titleCondition=displayState && expenseID===expenseId && input==='title'
 if(titleCondition){
-    expenseTitleDisplay=<p className='titleEdit'><span className='expense_input_title'><input onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span></p>
+    expenseTitleDisplay=<span className='flex !w-[60%] gap-2'><input className='w-full px-1 rounded-lg outline-none' onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
 }
 
-let expenseAmountDisplay=<span onClick={ondisplayEditAmount} className={`${'w-full bg-indigo-800 p-3 border-2 border-white rounded-lg'} ${'amount_A'}`}>{`$${amount}`}</span>
+let expenseAmountDisplay=<span onClick={ondisplayEditAmount} className={`${'w-full bg-indigo-800 p-3 border-2 border-white rounded-lg after:content-["click_to_edit_Amount"] after:hidden after:text-[0.7rem] after:bg-black after:px-2 after:rounded-lg hover:after:block max-lg:after:!hidden after:font-[400] after:absolute after:bottom-20'} ${'amount_A'}`}>{`$${amount}`}</span>
 const amountCondition=displayState && expenseID===expenseId && input==='amount'
 if(amountCondition){
-    expenseAmountDisplay=<span className='expense_input_amount text-black'><input onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input>
+    expenseAmountDisplay=<span className='flex'><input className='w-full text-black py-2 px-1 rounded-lg outline-none' onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input>
     </span>
 }
 
@@ -114,15 +114,20 @@ useEffect(()=>{
 return(
 <>
     <Card className='flex w-full justify-between items-center bg-[#4b4b4b] max-md:pt-0 my-5 max-md:flex-col max-md:gap-4'>
-       <div className='flex items-center max-md:flex-col gap-40 max-md:gap-8 w-full'>
+       <div className='flex items-center max-md:flex-col md:gap-20 max-md:gap-8 w-full relative'>
        <ExpenseDate expenseDate={date}/>
+       <div>
+        <div>
 {expenseTitleDisplay}
+        </div>
        </div>
-<div className='flex items-center gap-20 mt-5'>
-
-<div className={`${'font-extrabold text-white w-[5rem]'}`}>{expenseAmountDisplay}</div>
-{amountCondition && <span className='checkICA'><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
-<button  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
+       </div>
+<div className='flex items-center gap-20 mt-5 relative md:bottom-2'>
+<div className='flex items-center gap-2'>
+<div className='font-extrabold text-white'>{expenseAmountDisplay}</div>
+{amountCondition && <span><CheckIcon onSet={onSetNewAmount}/><CloseIcon onClick={onClose}/></span>}
+</div>
+<button className='after:content-["delete"] after:hidden after:text-[0.7rem] after:bg-black after:px-2 after:rounded-lg hover:after:block after:text-white max-lg:after:!hidden after:font-[400] after:absolute after:bottom-20'  style={{backgroundColor:'#f56f3b'}} onClick={deleteHandle}><span style={{color:'white'}}>—</span></button>
 </div>
     
     </Card>
