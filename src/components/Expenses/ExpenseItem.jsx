@@ -86,13 +86,13 @@ const ondisplayEditAmount=()=>{
 let expenseTitleDisplay=<h2  onClick={ondisplayEditTitle} className='expenseTitleOrAmount font-extrabold text-white after:content-["click_to_edit_Title"] after:hidden after:text-[0.7rem] after:bg-black after:px-2 after:rounded-lg hover:after:block max-lg:after:!hidden after:font-[400] after:absolute after:bottom-20'>{title}</h2>
 const titleCondition=displayState && expenseID===expenseId && input==='title'
 if(titleCondition){
-    expenseTitleDisplay=<span className='flex !w-[60%] gap-2'><input className='w-full px-1 rounded-lg outline-none' onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
+    expenseTitleDisplay=<span className='flex !w-[60%] max-md:!w-full gap-2 max-md:h-10 items-center'><input className='w-full px-1 rounded-lg outline-none md:py-2 max-md:py-1' onChange={onGetNewTitle} type='text' placeholder={`${error}`} value={newTitle}></input><span className='checkIC'><CheckIcon onSet={onSetNewTitle}/><CloseIcon onClick={onClose}/></span></span>
 }
 
 let expenseAmountDisplay=<span onClick={ondisplayEditAmount} className={`${'w-full bg-indigo-800 p-3 border-2 border-white rounded-lg after:content-["click_to_edit_Amount"] after:hidden after:text-[0.7rem] after:bg-black after:px-2 after:rounded-lg hover:after:block max-lg:after:!hidden after:font-[400] after:absolute after:bottom-20'} ${'amount_A'}`}>{`$${amount}`}</span>
 const amountCondition=displayState && expenseID===expenseId && input==='amount'
 if(amountCondition){
-    expenseAmountDisplay=<span className='flex'><input className='w-full text-black py-2 px-1 rounded-lg outline-none' onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input>
+    expenseAmountDisplay=<span className='flex'><input className='w-full text-black md:py-2 max-md:py-1 px-1 rounded-lg outline-none' onChange={onGetNewAmount} type='number' placeholder={`${error}`} value={newAmount}></input>
     </span>
 }
 
@@ -114,7 +114,7 @@ useEffect(()=>{
 return(
 <>
     <Card className='flex w-full justify-between items-center bg-[#4b4b4b] max-md:pt-0 my-5 max-md:flex-col max-md:gap-4'>
-       <div className='flex items-center max-md:flex-col md:gap-20 max-md:gap-8 w-full relative'>
+       <div className='flex items-center max-md:flex-col  md:gap-20 max-md:gap-8 w-full relative'>
        <ExpenseDate expenseDate={date}/>
        <div>
         <div>
